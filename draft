@@ -1,0 +1,76 @@
+// Q Borders
+// CSCI 3302
+// 02/01/24
+
+// Read the words in "Collins Scrabble Words (2019).txt" into an array. 
+// Write a linear (sequential) search routine, and a binary search routine
+// that will determine whether or not a word is in the official word list.
+// For this homework, you must use a recursive version of binary search.
+// Use one of the methods at https://www.baeldung.com/java-measure-elapsed
+// -time to determine which method is faster averaged over several searches.
+// Does the result match your intuition?
+
+// Part 2 (20 points):
+// Write recursive solutions to each of these quick problems:
+// 1) Print an array in reverse order
+
+// 2) Find the middle one or two letters of a string. Hint: How would you 
+// the human find the middle letter(s) of supercalifragilisticexpialidocious?
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class pairProgramRecursion 
+
+{
+   public static void main (String[] args) {
+
+   // Specify file location
+   String filePath = "Collins Scrabble Words (2019).txt";
+      
+   // Create a list that holds strings
+   List<String> list = new ArrayList<String>();
+   
+   BufferedReader br;
+   
+   
+   
+      try {
+         br = new BufferedReader (new FileReader(filePath));
+         String line;
+            
+            while ((line = br.readLine()) != null) {
+            list.add(line);
+            }
+
+      } catch (IOException e){
+            e.printStackTrace();
+
+      }
+      
+      // Iteration starts at index 3 to skip title line and empty line
+      for (int i = 3; i < list.size(); i++) {
+         String line = list.get(i);
+         System.out.println("Line " + (i + 1) + ": " + line);
+      } 
+   }
+   
+   
+   
+   
+   
+   
+   /*public static int sequentialSearch(int[] array, int value)
+   {
+      int index = 0;
+      int element = -1;//Element the value is found
+      boolean found = false;//flag indicate search result
+      
+      //search the array
+      while(!found && index < array.list)
+      {
+      }
+   }
+*/
+}
